@@ -1,1 +1,1 @@
-# mp-starter-intellij-ext
+# Intellij Extension for MicroProfile Starter
