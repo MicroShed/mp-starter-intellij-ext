@@ -26,7 +26,7 @@ import javax.swing.*;
 import java.util.Arrays;
 
 /**
- * Given the MicroProfile server name as returned by MicroProfiler Starter REST
+ * Given the MicroProfile implementation name as returned by MicroProfiler Starter REST
  * API (e.g. THORNTAIL_V2 or PAYARA_MICRO) and renders them as in a human
  * readable form (e.g. Thorntail V2 or Payara Micro)
  *

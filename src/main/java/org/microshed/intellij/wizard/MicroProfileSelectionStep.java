@@ -140,7 +140,7 @@ public class MicroProfileSelectionStep extends ModuleWizardStep {
         mpServersComboBox.setRenderer(new MPServerComboBoxRenderer());
 
         topPanelLayoutConstraint.gridy++;
-        topPanel.add(new LabeledComponent("MicroProfile Servers", mpServersComboBox), topPanelLayoutConstraint);
+        topPanel.add(new LabeledComponent("MicroProfile Implementations", mpServersComboBox), topPanelLayoutConstraint);
 
         return topPanel;
     }

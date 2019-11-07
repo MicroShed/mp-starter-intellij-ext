@@ -40,7 +40,7 @@ public class LabeledComponent extends JPanel {
         JBLabel label = new JBLabel();
         label.setText(labelText + ":");
 
-        label.setPreferredSize(new Dimension(170, 20));
+        label.setPreferredSize(new Dimension(220, 20));
         add(label, BorderLayout.WEST);
         add(component, BorderLayout.CENTER);
     }
