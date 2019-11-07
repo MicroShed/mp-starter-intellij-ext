@@ -16,12 +16,19 @@ Search for _MicroProfile Starter_ in IntelliJ **Settings > Plugins > Marketplace
 
 ## Build
 The project is built using [gradle-intellij-plugin](https://github.com/JetBrains/gradle-intellij-plugin/).
-To build and executes an IntelliJ IDEA instance with the plugin installed you just need to run the following grade
+
+To build the project you must have the gradle installed on your computer. You can use [sdkman](https://sdkman.io) 
+to do that. 
+First initialized the gradle wrapper using the following command so that proper version of the Gradle gets downloaded 
+for the build process.
+```groovy
+gradle wrapper
+```
+then you can build and executes an IntelliJ IDEA instance with the plugin installed by running the following grade
 task:
 ```
 ./gradlew runIde
 ```
-
 
 # Prepare a new version for release
 

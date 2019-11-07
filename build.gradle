@@ -40,3 +40,7 @@ intellij {
 patchPluginXml {
     changeNotes """"""
 }
+
+wrapper {
+    gradleVersion = '5.2.1'
+}
