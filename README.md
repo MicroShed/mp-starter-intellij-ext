@@ -30,7 +30,7 @@ task:
 ./gradlew runIde
 ```
 
-# Prepare a new version for release
+## Prepare a new version for release
 
 **Update version**
 
