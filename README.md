@@ -30,7 +30,7 @@ task:
 ./gradlew runIde
 ```
 
-# Prepare a new version for release
+## Prepare a new version for release
 
 **Update version**
 
@@ -64,4 +64,8 @@ This task prepares the final output in `build/distribution` folder as a zip file
 **Upload to the marketplace**
 
 This step is manual. You should login to [Upload New Plugin](https://plugins.jetbrains.com/plugin/add/) page in
-Jetbrains website using the project account and upload the new version there.
+JetBrains website using the project account and upload the new version there.
+
+
+## Contributing
+Our [CONTRIBUTING](CONTRIBUTING.md) document contains details for submitting pull requests.
