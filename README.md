@@ -1,6 +1,6 @@
 # Intellij Extension for MicroProfile Starter
 This plugin allows you to easily create a microservice module based on MicroProfile 
-APIs. You can choose your preferred MicroProfile runtime such as Liberty, Helidon, TomEE, Payara Micro or Thorntail.
+APIs. You can choose your preferred MicroProfile runtime such as Liberty, Helidon, TomEE, Payara Micro, Thorntail, etc.
 By doing so you'll get a project with proper Maven profiles already setup so that you run it right after the
 setup completes. 
 
