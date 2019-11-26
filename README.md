@@ -1,6 +1,6 @@
 # Intellij Extension for MicroProfile Starter
 This plugin allows you to easily create a microservice module based on MicroProfile 
-APIs. You can choose your preferred MicroProfile runtime such as Liberty, Helidon, TomEE, Payara Micro or Thorntail.
+APIs. You can choose your preferred MicroProfile runtime such as Liberty, Helidon, TomEE, Payara Micro, Thorntail, etc.
 By doing so you'll get a project with proper Maven profiles already setup so that you run it right after the
 setup completes. 
 
@@ -64,7 +64,8 @@ This task prepares the final output in `build/distribution` folder as a zip file
 **Upload to the marketplace**
 
 This step is manual. You should login to [Upload New Plugin](https://plugins.jetbrains.com/plugin/add/) page in
-Jetbrains website using the project account and upload the new version there.
+JetBrains website using the project account and upload the new version there.
+
 
 ## Contributing
 Our [CONTRIBUTING](CONTRIBUTING.md) document contains details for submitting pull requests.
