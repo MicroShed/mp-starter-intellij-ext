@@ -163,10 +163,12 @@ public class MicroProfileSelectionStep extends ModuleWizardStep {
         }
         mpSpecsCheckboxTree = new MPSpecCheckboxTree(specsList);
         mpSpecsCheckboxTree.addTreeSelectionListener(e -> {
-            CheckedTreeNode node = (CheckedTreeNode) e.getNewLeadSelectionPath().getLastPathComponent();
-            if ((node.getUserObject() != null) && (node.getUserObject() instanceof MicroProfileSpec)) {
-                String description = ((MicroProfileSpec) node.getUserObject()).getDescription();
-                specDescriptionLabel.setText(StringUtils.capitalize(description));
+            if((e.getNewLeadSelectionPath() != null) && (e.getNewLeadSelectionPath().getLastPathComponent() != null)) {
+                CheckedTreeNode node = (CheckedTreeNode) e.getNewLeadSelectionPath().getLastPathComponent();
+                if ((node.getUserObject() != null) && (node.getUserObject() instanceof MicroProfileSpec)) {
+                    String description = ((MicroProfileSpec) node.getUserObject()).getDescription();
+                    specDescriptionLabel.setText(StringUtils.capitalize(description));
+                }
             }
         });
         specsListPanel.add(mpSpecsCheckboxTree, BorderLayout.CENTER);
