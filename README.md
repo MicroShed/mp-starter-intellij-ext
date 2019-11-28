@@ -49,8 +49,12 @@ Example:
 ```groovy
 patchPluginXml {
     changeNotes """
-        The issues #X resolved.<br/>
-        Feature Y added
+        <strong><em>2019-11-28</em></strong>
+        <p>
+        [Bug Fix] : NullPointerException in the IDE log when the description of a spec is going to be updated in the project wizard (#334)
+        [New Feature] : Now developers can choose options X or Y (#223)
+        [Improvements] : The process of doing Z is now faster (#112)
+        </p>
     """
 }
 ```
@@ -63,9 +67,21 @@ This task prepares the final output in `build/distribution` folder as a zip file
 
 **Upload to the marketplace**
 
-This step is manual. You should login to [Upload New Plugin](https://plugins.jetbrains.com/plugin/add/) page in
-JetBrains website using the project account and upload the new version there.
+You can do this step either manually or via gradle.
 
+- Uploading manually
+
+    You should login to [Upload New Plugin](https://plugins.jetbrains.com/plugin/add/) page in JetBrains website using the
+     project account and upload the new version there.
+
+- Upload via gradle
+
+    - Create a Permanent Token with _Marketplace_ scope at [JetBrains Hub](https://hub.jetbrains.com/users/moghaddam?tab=authentification)
+    - Copy the value of the token in an environment variable named _ORG_GRADLE_PROJECT_intellijPublishToken_
+    - Run`./gradlew publishPlugin` in the root of the project to publish the plugin.
+    
+
+Normally it takes two business days until the plugin gets approved and published to the Marketplace.
 
 ## Contributing
 Our [CONTRIBUTING](CONTRIBUTING.md) document contains details for submitting pull requests.

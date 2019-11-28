@@ -39,7 +39,12 @@
 ]]></description>
 
     <change-notes>
-        Fixed #4: NullPointerException in the IDE log when the description of a spec is going to be updated in the project wizard
+        <![CDATA[
+        <strong><em>2019-11-28</em></strong>
+        <p>
+        [Bug Fix] : NullPointerException in the IDE log when the description of a spec is going to be updated in the project wizard (#4)
+        </p>
+        ]]>
     </change-notes>
 
     <depends>org.jetbrains.idea.maven</depends>

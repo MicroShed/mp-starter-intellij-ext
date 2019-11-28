@@ -41,6 +41,10 @@ patchPluginXml {
     changeNotes """"""
 }
 
+publishPlugin {
+    token = System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken")
+}
+
 wrapper {
     gradleVersion = '5.2.1'
 }
