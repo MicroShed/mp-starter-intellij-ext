@@ -20,6 +20,7 @@
 <idea-plugin>
     <id>org.microshed.intellij-plugin</id>
     <name>MicroProfile Starter</name>
+    <idea-version since-build="192" until-build="193.*"/>
 
     <vendor email="zaerymoghaddam@gmail.com" url="https://github.com/MicroShed/mp-starter-intellij-ext">MicroProfile Community</vendor>
 
@@ -39,7 +40,17 @@
 ]]></description>
 
     <change-notes>
-        Fixed #4: NullPointerException in the IDE log when the description of a spec is going to be updated in the project wizard
+        <![CDATA[
+        <strong><em>2019-11-29</em></strong>
+        <p>
+        [Improvements] : Add support for IntelliJ 2019.3 (#6)
+        </p>
+        <br/>
+        <strong><em>2019-11-28</em></strong>
+        <p>
+        [Bug Fix] : NullPointerException in the IDE log when the description of a spec is going to be updated in the project wizard (#4)
+        </p>
+        ]]>
     </change-notes>
 
     <depends>org.jetbrains.idea.maven</depends>

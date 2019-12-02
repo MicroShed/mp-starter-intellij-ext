@@ -19,13 +19,14 @@
 plugins {
     id 'java'
     id 'checkstyle'
-    id 'org.jetbrains.intellij' version '0.4.10'
+    id 'org.jetbrains.intellij' version '0.4.14'
 }
 
 group 'org.microshed'
-version '0.1.1'
+version '0.1.2'
 
-sourceCompatibility = 1.8
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()
@@ -33,12 +34,16 @@ repositories {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2019.2'
+    version '2019.3'
     plugins 'maven', 'java'
 }
 
 patchPluginXml {
     changeNotes """"""
+}
+
+publishPlugin {
+    token = System.getenv("ORG_GRADLE_PROJECT_intellijPublishToken")
 }
 
 wrapper {
