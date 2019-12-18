@@ -42,8 +42,6 @@ version 'X.Y.Z'
 **Update the change log**
 
 The change log in the `patchPluginXml` block inside `build.gradle` should be updated with necessary details about the changes in the new version.
-During the build process, the contents of the `changeNotes` block would be copied into the 
-`plugin.xml` that eventually appears as part of the description of the plugin in its IntelliJ marketplace page:
 
 Example:
 
@@ -58,6 +56,13 @@ patchPluginXml {
         </p>
     """
 }
+```
+
+then by running the following gradle task to copy the contents of the `changeNotes` block into the `plugin.xml` that eventually appears as part of the
+ description of the plugin in its IntelliJ marketplace page:
+
+```groovy
+./gradlew patchPluginXml
 ```
 
 **Build a new distribution**
