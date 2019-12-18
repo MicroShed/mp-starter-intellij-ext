@@ -193,7 +193,7 @@ public class MicroProfileModuleBuilder extends JavaModuleBuilder {
     }
 
     private VirtualFile downloadStarterProjectZip(Project project, File tempFolder) throws IOException {
-        String url = STARTER_REST_BASE_URL + "/api/2/project?" + moduleCreationData.toQueryString();
+        String url = STARTER_REST_BASE_URL + "/api/3/project?" + moduleCreationData.toQueryString();
         File file = FileUtil.createTempFile(tempFolder, "microprofile_starter_", "_download", true, true);
 
         final DownloadableFileService downloadService = DownloadableFileService.getInstance();
