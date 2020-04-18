@@ -19,11 +19,11 @@
 plugins {
     id 'java'
     id 'checkstyle'
-    id 'org.jetbrains.intellij' version '0.4.14'
+    id 'org.jetbrains.intellij' version '0.4.18'
 }
 
 group 'org.microshed'
-version '0.2.0'
+version '0.3.0'
 
 sourceCompatibility = JavaVersion.VERSION_1_8
 targetCompatibility = JavaVersion.VERSION_1_8
@@ -34,15 +34,20 @@ repositories {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2019.3'
+    version '2020.1'
     updateSinceUntilBuild true
     plugins 'maven', 'java'
 }
 
 patchPluginXml {
-    sinceBuild "192.*"
-    untilBuild "193.*"
+    sinceBuild "201"
+    untilBuild "203"
     changeNotes """
+        <strong><em>2020-04-18</em></strong>
+        <p>
+        [Improvements] : Compatibility with Intellij 2020.* releases 
+        </p>
+        <br/>
         <strong><em>2019-12-18</em></strong>
         <p>
         [Improvements] : Upgraded to MicroProfile Starter REST API v3 (#11) 
@@ -50,7 +55,7 @@ patchPluginXml {
         <br/>
         <strong><em>2019-12-02</em></strong>
         <p>
-        [Improvements] : Re-enabled the compatibility with IntelliJ 2019.2
+        [Improvements] : Re-enabled the compatibility with Intellij 2019.2
         </p>
         <br/>
         <strong><em>2019-11-29</em></strong>
@@ -70,5 +75,5 @@ publishPlugin {
 }
 
 wrapper {
-    gradleVersion = '5.2.1'
+    gradleVersion = '6.3'
 }
