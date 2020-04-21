@@ -77,7 +77,7 @@ public class MicroProfileModuleBuilder extends JavaModuleBuilder {
 
     @Override
     public String getParentGroup() {
-        return JavaModuleType.BUILD_TOOLS_GROUP;
+        return JavaModuleType.JAVA_GROUP;
     }
 
     @Override
@@ -96,6 +96,12 @@ public class MicroProfileModuleBuilder extends JavaModuleBuilder {
     @Override
     public String getPresentableName() {
         return "MicroProfile Starter";
+    }
+
+    @Override
+    public int getWeight() {
+        //  This ensures the "MicroProfile Starter" appears right after Java/Java EE in Ultimate version
+        return 95;
     }
 
     @Nullable
