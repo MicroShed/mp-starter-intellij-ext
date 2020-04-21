@@ -26,6 +26,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.impl.SimpleDataContext;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.module.JavaModuleType;
 import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.project.Project;
@@ -76,7 +77,7 @@ public class MicroProfileModuleBuilder extends JavaModuleBuilder {
 
     @Override
     public String getParentGroup() {
-        return "MicroProfile Starter";
+        return JavaModuleType.JAVA_GROUP;
     }
 
     @Override
@@ -95,6 +96,12 @@ public class MicroProfileModuleBuilder extends JavaModuleBuilder {
     @Override
     public String getPresentableName() {
         return "MicroProfile Starter";
+    }
+
+    @Override
+    public int getWeight() {
+        //  This ensures the "MicroProfile Starter" appears right after Java/Java EE in Ultimate version
+        return 95;
     }
 
     @Nullable

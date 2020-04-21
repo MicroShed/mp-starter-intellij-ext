@@ -43,6 +43,11 @@ patchPluginXml {
     sinceBuild "201"
     untilBuild "203"
     changeNotes """
+        <strong><em>2020-04-21</em></strong>
+        <p>
+        [Improvements] : Moved MicroProfile Starter icon on "New Project Wizard" to a more relevant section 
+        </p>
+        <br/>
         <strong><em>2020-04-18</em></strong>
         <p>
         [Improvements] : Compatibility with Intellij 2020.* releases 
