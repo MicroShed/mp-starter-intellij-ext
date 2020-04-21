@@ -26,6 +26,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.impl.SimpleDataContext;
 import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.diagnostic.Logger;
+import com.intellij.openapi.module.JavaModuleType;
 import com.intellij.openapi.module.ModuleType;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.project.Project;
@@ -76,7 +77,7 @@ public class MicroProfileModuleBuilder extends JavaModuleBuilder {
 
     @Override
     public String getParentGroup() {
-        return "MicroProfile Starter";
+        return JavaModuleType.BUILD_TOOLS_GROUP;
     }
 
     @Override
