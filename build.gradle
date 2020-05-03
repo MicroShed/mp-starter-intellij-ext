@@ -23,10 +23,12 @@ plugins {
 }
 
 group 'org.microshed'
-version '0.3.1'
+version '0.3.2'
 
-sourceCompatibility = JavaVersion.VERSION_1_8
-targetCompatibility = JavaVersion.VERSION_1_8
+java  {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
 
 repositories {
     mavenCentral()
@@ -43,6 +45,11 @@ patchPluginXml {
     sinceBuild "201"
     untilBuild "203"
     changeNotes """
+        <strong><em>2020-05-02</em></strong>
+        <p>
+        [Bug Fix] : MicroProfile project wizard is being displayed instead of other Java project types (#10) 
+        </p>
+        <br/>
         <strong><em>2020-04-21</em></strong>
         <p>
         [Improvements] : Moved MicroProfile Starter icon on "New Project Wizard" to a more relevant section 

@@ -22,29 +22,61 @@ import com.intellij.ide.util.projectWizard.JavaSettingsStep;
 import com.intellij.ide.util.projectWizard.ModuleBuilder;
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import com.intellij.ide.util.projectWizard.SettingsStep;
-import com.intellij.openapi.module.JavaModuleType;
 import com.intellij.openapi.module.ModuleType;
+import com.intellij.openapi.module.ModuleTypeManager;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.util.lang.JavaVersion;
+import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import javax.swing.*;
 
 /**
  * @author Ehsan Zaery Moghaddam (ezm@one.com)
  */
-public class MicroProfileCompatibleJavaModuleType extends JavaModuleType {
+public class MicroProfileCompatibleJavaModuleType extends ModuleType<MicroProfileModuleBuilder> {
+    private static final String MICROPROFILE_MODULE_ID = "MICROPROFILE_MODULE";
 
-    public static final ModuleType JAVA;
+    public MicroProfileCompatibleJavaModuleType() {
+        super(MICROPROFILE_MODULE_ID);
+    }
 
-    static {
-        try {
-            JAVA = (ModuleType) Class.forName("org.microshed.intellij." +
-                    "MicroProfileCompatibleJavaModuleType").newInstance();
-        } catch (Exception e) {
-            throw new IllegalArgumentException(e);
-        }
+    protected MicroProfileCompatibleJavaModuleType(@NotNull String id) {
+        super(id);
+    }
+
+    public static ModuleType getModuleType() {
+        return ModuleTypeManager.getInstance().findByID(MICROPROFILE_MODULE_ID);
+    }
+
+    @NotNull
+    @Override
+    public MicroProfileModuleBuilder createModuleBuilder() {
+        return new MicroProfileModuleBuilder();
+    }
+
+    @Nls(capitalization = Nls.Capitalization.Title)
+    @NotNull
+    @Override
+    public String getName() {
+        return "MicroProfile Starter";
+    }
+
+    @Nls(capitalization = Nls.Capitalization.Sentence)
+    @NotNull
+    @Override
+    public String getDescription() {
+        return "A MicroProfile module is used to start developing microservices using MicroProfile. It uses MicroProfile Starter to setup proper " +
+                "dependencies and configurations based on the MicroProfile runtime that you choose.";
+    }
+
+    @NotNull
+    @Override
+    public Icon getNodeIcon(boolean isOpened) {
+        return MicroProfilePluginIcons.MICROPROFILE_ICON;
     }
 
     @Nullable

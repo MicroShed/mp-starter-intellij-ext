@@ -72,7 +72,7 @@ public class MicroProfileModuleBuilder extends JavaModuleBuilder {
 
     @Override
     public ModuleType getModuleType() {
-        return MicroProfileCompatibleJavaModuleType.JAVA;
+        return MicroProfileCompatibleJavaModuleType.getModuleType();
     }
 
     @Override

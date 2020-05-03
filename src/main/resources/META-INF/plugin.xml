@@ -43,5 +43,6 @@
 
     <extensions defaultExtensionNs="com.intellij">
         <moduleBuilder builderClass="org.microshed.intellij.MicroProfileModuleBuilder" order="last" id="MICRO_PROFILE_MODULE_BUILDER"/>
+        <moduleType implementationClass="org.microshed.intellij.MicroProfileCompatibleJavaModuleType" id="MICROPROFILE_MODULE"/>
     </extensions>
 </idea-plugin>
