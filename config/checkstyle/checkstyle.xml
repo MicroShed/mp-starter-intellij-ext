@@ -27,11 +27,11 @@
         <property name="fileExtensions" value="java"/>
     </module>
     <module name="FileTabCharacter"/>
+    <module name="LineLength">
+        <property name="max" value="150"/>
+        <property name="ignorePattern" value="@version|@see"/>
+    </module>
     <module name="TreeWalker">
-        <module name="LineLength">
-            <property name="max" value="150"/>
-            <property name="ignorePattern" value="@version|@see"/>
-        </module>
         <module name="SuppressionCommentFilter"/>
         <module name="ConstantName">
             <property name="format" value="^(([A-Z][A-Z0-9]*(_[A-Z0-9]+)*))$"/>
