@@ -27,6 +27,15 @@ import java.util.List;
 public class MicroProfileConfig {
     private List<String> supportedServers = new ArrayList<>();
     private List<String> specs = new ArrayList<>();
+    private List<String> specCodes = new ArrayList<>();
+
+    public List<String> getSpecCodes() {
+        return specCodes;
+    }
+
+    public void setSpecCodes(List<String> specCodes) {
+        this.specCodes = specCodes;
+    }
 
     public List<String> getSupportedServers() {
         return supportedServers;
