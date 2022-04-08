@@ -19,11 +19,11 @@
 plugins {
     id 'java'
     id 'checkstyle'
-    id 'org.jetbrains.intellij' version '0.7.2'
+    id 'org.jetbrains.intellij' version '1.5.2'
 }
 
 group 'org.microshed'
-version '0.3.4'
+version '0.3.5'
 
 java  {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -36,39 +36,43 @@ repositories {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version '2021.1'
-    updateSinceUntilBuild true
-    plugins 'maven', 'java'
+    version.set('2021.3')
+    updateSinceUntilBuild.set(true)
+    plugins.set(['maven', 'java'])
 }
 
 patchPluginXml {
-    sinceBuild "201"
-    untilBuild "211.*"
-    changeNotes """
+    sinceBuild.set("201")
+    changeNotes.set(provider{"""
+        <strong><em>2022-04-08</em></strong>
+        <p>
+        [Improvements]: Compatible with IntelliJ 2022.*
+        </p>
+        <br/>
         <strong><em>2021-04-08</em></strong>
         <p>
         [Bug Fix] : IntelliJ plugin failed to fetch from MicroProfile Starter API (#22)
-        [Improvements]: Compatible with IntelliJ 2021.* 
+        [Improvements]: Compatible with IntelliJ 2021.*
         </p>
         <br/>
         <strong><em>2020-05-02</em></strong>
         <p>
-        [Bug Fix] : MicroProfile project wizard is being displayed instead of other Java project types (#10) 
+        [Bug Fix] : MicroProfile project wizard is being displayed instead of other Java project types (#10)
         </p>
         <br/>
         <strong><em>2020-04-21</em></strong>
         <p>
-        [Improvements] : Moved MicroProfile Starter icon on "New Project Wizard" to a more relevant section 
+        [Improvements] : Moved MicroProfile Starter icon on "New Project Wizard" to a more relevant section
         </p>
         <br/>
         <strong><em>2020-04-18</em></strong>
         <p>
-        [Improvements] : Compatibility with Intellij 2020.* releases 
+        [Improvements] : Compatibility with Intellij 2020.* releases
         </p>
         <br/>
         <strong><em>2019-12-18</em></strong>
         <p>
-        [Improvements] : Upgraded to MicroProfile Starter REST API v3 (#11) 
+        [Improvements] : Upgraded to MicroProfile Starter REST API v3 (#11)
         </p>
         <br/>
         <strong><em>2019-12-02</em></strong>
@@ -86,6 +90,7 @@ patchPluginXml {
         [Bug Fix] : NullPointerException in the IDE log when the description of a spec is going to be updated in the project wizard (#4)
         </p>
 """
+    })
 }
 
 publishPlugin {
@@ -93,5 +98,5 @@ publishPlugin {
 }
 
 wrapper {
-    gradleVersion = '6.8.3'
+    gradleVersion = '7.4.2'
 }
