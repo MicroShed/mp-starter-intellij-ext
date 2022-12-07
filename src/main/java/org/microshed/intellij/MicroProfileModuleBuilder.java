@@ -104,6 +104,11 @@ public class MicroProfileModuleBuilder extends JavaModuleBuilder {
         return 95;
     }
 
+    @Override
+    public boolean isAvailable() {
+        return true;
+    }
+
     @Nullable
     @Override
     public ModuleWizardStep getCustomOptionsStep(WizardContext context, Disposable parentDisposable) {
