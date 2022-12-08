@@ -19,15 +19,15 @@
 plugins {
     id 'java'
     id 'checkstyle'
-    id 'org.jetbrains.intellij' version '1.5.2'
+    id 'org.jetbrains.intellij' version '1.10.0'
 }
 
 group 'org.microshed'
-version '0.3.5'
+version '0.3.6'
 
 java  {
-    sourceCompatibility = JavaVersion.VERSION_1_8
-    targetCompatibility = JavaVersion.VERSION_1_8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 }
 
 repositories {
@@ -36,14 +36,19 @@ repositories {
 
 // See https://github.com/JetBrains/gradle-intellij-plugin/
 intellij {
-    version.set('2021.3')
-    updateSinceUntilBuild.set(true)
+    version.set('2022.3')
+    updateSinceUntilBuild.set(false)
     plugins.set(['maven', 'java'])
 }
 
 patchPluginXml {
-    sinceBuild.set("201")
+    sinceBuild.set("223")
     changeNotes.set(provider{"""
+        <strong><em>2022-12-07</em></strong>
+        <p>
+        [Improvements]: Do a new release to match the recent version of the IntelliJ
+        </p>
+        <br/>
         <strong><em>2022-04-08</em></strong>
         <p>
         [Improvements]: Compatible with IntelliJ 2022.*

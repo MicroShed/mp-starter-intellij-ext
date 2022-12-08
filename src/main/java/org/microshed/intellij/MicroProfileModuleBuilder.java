@@ -104,6 +104,11 @@ public class MicroProfileModuleBuilder extends JavaModuleBuilder {
         return 95;
     }
 
+    @Override
+    public boolean isAvailable() {
+        return true;
+    }
+
     @Nullable
     @Override
     public ModuleWizardStep getCustomOptionsStep(WizardContext context, Disposable parentDisposable) {
@@ -129,7 +134,7 @@ public class MicroProfileModuleBuilder extends JavaModuleBuilder {
 
     /**
      * Calls MicroProfile Starter REST API and fetches the initial project structure, extract it to a temp folder, copy that to the module root and
-     * ensures that all pom.xml files found in the folder are detected by IntelliJ as Maven module.
+     * ensures that IntelliJ detects all pom.xml files found in the folder as Maven module.
      */
     @Override
     public void setupRootModel(@NotNull ModifiableRootModel modifiableRootModel) throws ConfigurationException {

@@ -26,5 +26,5 @@ import javax.swing.*;
  * @author Ehsan Zaery Moghaddam (zaerymoghaddam@gmail.com)
  */
 public interface MicroProfilePluginIcons {
-    Icon MICROPROFILE_ICON = IconLoader.getIcon("/icons/microprofile.png");
+    Icon MICROPROFILE_ICON = IconLoader.getIcon("/icons/microprofile.png", MicroProfilePluginIcons.class);
 }

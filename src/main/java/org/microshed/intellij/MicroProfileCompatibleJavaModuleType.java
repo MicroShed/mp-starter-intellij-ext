@@ -93,12 +93,12 @@ public class MicroProfileCompatibleJavaModuleType extends ModuleType<MicroProfil
                     Sdk jdk = myJdkComboBox.getSelectedJdk();
                     if (jdk != null && jdk.getVersionString() != null) {
                         JavaVersion javaVersion = JavaVersion.parse(jdk.getVersionString());
-                        if (javaVersion.feature != 8) {
-                            Messages.showErrorDialog("MicroProfile Starter requires JDK 8", "");
+                        if (javaVersion.feature < 8) {
+                            Messages.showErrorDialog("MicroProfile Starter requires at least JDK 8", "");
                             result = false;
                         }
                     } else {
-                        Messages.showErrorDialog("MicroProfile Starter requires JDK 8", "");
+                        Messages.showErrorDialog("MicroProfile Starter requires at least JDK 8", "");
                         result = false;
                     }
                 }
